@@ -36,6 +36,9 @@ public class Employee {
     @JoinColumn(name = "role_id")
     private Role role;
 
+    @Column(name = "position", length = 30)
+    private String position;
+
 /*    @OneToMany(cascade = CascadeType.MERGE)
     @JoinColumn(name = "department_id")
     private Department department;*/
@@ -101,4 +104,11 @@ public class Employee {
         this.role = role;
     }
 
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
 }

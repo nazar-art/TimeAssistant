@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="MySQL - _Time_Assistant@localhost" uuid="95fdb5ff-3af1-484c-b477-fe4c8af7e65c">
+  <data-source source="LOCAL" name="MySQL - _Time_Assistant?characterEncoding=utf8@localhost" uuid="95fdb5ff-3af1-484c-b477-fe4c8af7e65c">
     <database-info product="MySQL" version="5.5.35-0ubuntu0.13.10.2" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.26 ( Revision: ${bzr.revision-id} )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
@@ -13,7 +13,8 @@
       <column name="first_name" sqlType="VARCHAR" length="20" precision="0" nullable="false" jdbcType="12"/>
       <column name="image" sqlType="VARCHAR" length="70" precision="0" nullable="true" jdbcType="12"/>
       <column name="last_name" sqlType="VARCHAR" length="25" precision="0" nullable="false" jdbcType="12"/>
-      <column name="password" sqlType="VARCHAR" length="60" precision="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" length="80" precision="0" nullable="false" jdbcType="12"/>
+      <column name="position" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <column name="role_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="FK_4w3luja5yf4agc4pip3gkddv3" columns="role_id" ref-table="roles" ref-schema="" ref-catalog="_Time_Assistant" ref-columns="role_id" update-rule="3" delete-rule="3" deferrability="2"/>
