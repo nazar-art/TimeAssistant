@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="MySQL - _Time_Assistant@localhost" uuid="95fdb5ff-3af1-484c-b477-fe4c8af7e65c">
+    <database-info product="MySQL" version="5.5.35-0ubuntu0.13.10.2" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.26 ( Revision: ${bzr.revision-id} )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="_Time_Assistant"/>
+    <table name="employees" schema="" catalog="_Time_Assistant" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="email" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
+      <column name="first_name" sqlType="VARCHAR" length="20" precision="0" nullable="false" jdbcType="12"/>
+      <column name="image" sqlType="VARCHAR" length="70" precision="0" nullable="true" jdbcType="12"/>
+      <column name="last_name" sqlType="VARCHAR" length="25" precision="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" length="60" precision="0" nullable="false" jdbcType="12"/>
+      <column name="role_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_4w3luja5yf4agc4pip3gkddv3" columns="role_id" ref-table="roles" ref-schema="" ref-catalog="_Time_Assistant" ref-columns="role_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_ow5ffabbvop1vyuv2m4gr65ul" table="tasks" schema="" catalog="_Time_Assistant" columns="employee_id"/>
+      <exported-key name="FK_710sbdrijuexyu9n0pcjillxf" table="team" schema="" catalog="_Time_Assistant" columns="employee_id"/>
+    </table>
+    <table name="projects" schema="" catalog="_Time_Assistant" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="description" sqlType="VARCHAR" length="50" precision="0" nullable="true" jdbcType="12"/>
+      <column name="notes" sqlType="VARCHAR" length="60" precision="0" nullable="true" jdbcType="12"/>
+      <column name="project_name" sqlType="VARCHAR" length="30" precision="0" nullable="true" jdbcType="12"/>
+      <column name="task_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_fy98i7q2k2kvdaesrw6twig10" columns="task_id" ref-table="tasks" ref-schema="" ref-catalog="_Time_Assistant" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_dd8icgfs47uvsbcb0yshew6iu" table="tasks" schema="" catalog="_Time_Assistant" columns="project_id"/>
+      <exported-key name="FK_bsgqgukhojgbhthllr7mvkect" table="team" schema="" catalog="_Time_Assistant" columns="project_id"/>
+    </table>
+    <table name="roles" schema="" catalog="_Time_Assistant" type="TABLE">
+      <column name="role_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="role_name" sqlType="VARCHAR" length="30" precision="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="role_id"/>
+      <exported-key name="FK_4w3luja5yf4agc4pip3gkddv3" table="employees" schema="" catalog="_Time_Assistant" columns="role_id"/>
+    </table>
+    <table name="subtasks" schema="" catalog="_Time_Assistant" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="description" sqlType="VARCHAR" length="60" precision="0" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" length="30" precision="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_eyom1jdeqc20nmdua5efi0k05" table="tasks" schema="" catalog="_Time_Assistant" columns="subtask"/>
+    </table>
+    <table name="tasks" schema="" catalog="_Time_Assistant" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="estimate_time" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="real_time" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="state" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR" length="60" precision="0" nullable="true" jdbcType="12"/>
+      <column name="title" sqlType="VARCHAR" length="50" precision="0" nullable="true" jdbcType="12"/>
+      <column name="employee_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="project_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="subtask" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_eyom1jdeqc20nmdua5efi0k05" columns="subtask" ref-table="subtasks" ref-schema="" ref-catalog="_Time_Assistant" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_dd8icgfs47uvsbcb0yshew6iu" columns="project_id" ref-table="projects" ref-schema="" ref-catalog="_Time_Assistant" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_ow5ffabbvop1vyuv2m4gr65ul" columns="employee_id" ref-table="employees" ref-schema="" ref-catalog="_Time_Assistant" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_fy98i7q2k2kvdaesrw6twig10" table="projects" schema="" catalog="_Time_Assistant" columns="task_id"/>
+    </table>
+    <table name="team" schema="" catalog="_Time_Assistant" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="employee_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="project_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_bsgqgukhojgbhthllr7mvkect" columns="project_id" ref-table="projects" ref-schema="" ref-catalog="_Time_Assistant" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_710sbdrijuexyu9n0pcjillxf" columns="employee_id" ref-table="employees" ref-schema="" ref-catalog="_Time_Assistant" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+  </data-source>
+</component>
