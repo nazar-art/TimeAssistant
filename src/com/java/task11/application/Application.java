@@ -25,7 +25,7 @@ public class Application {
         employeeService.save(employee);
 
         Employee empl = employeeService.getByEmail("columb@gmail.com");
-        System.out.printf("Info: %s%s%n", empl.getFirstName(), empl.getLastName());
+        System.out.printf("Info: %s %s%n", empl.getFirstName(), empl.getLastName());
         employeeService.delete(empl);
         System.out.println("\nTHE END");
     }
