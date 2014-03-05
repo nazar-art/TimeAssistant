@@ -72,7 +72,7 @@
       <file leaf-file-name="Application.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/java/task11/application/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="37" selection-start="953" selection-end="960" vertical-scroll-proportion="0.86710966" vertical-offset="0" max-vertical-offset="684">
+            <state line="29" column="37" selection-start="953" selection-end="960" vertical-scroll-proportion="2.965909" vertical-offset="0" max-vertical-offset="684">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -627,16 +627,16 @@
       <created>1394014499264</created>
       <updated>1394014499264</updated>
       <workItem from="1394014502081" duration="3817000" />
-      <workItem from="1394018465316" duration="12143000" />
+      <workItem from="1394018465316" duration="12398000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15960000" />
+    <option name="totallyTimeSpent" value="16215000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-26" width="1368" height="798" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -650,7 +650,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.734255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.65591395" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6543779" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25075528" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1162,7 +1162,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/java/task11/application/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="37" selection-start="953" selection-end="960" vertical-scroll-proportion="0.86710966" vertical-offset="0" max-vertical-offset="684">
+        <state line="29" column="37" selection-start="953" selection-end="960" vertical-scroll-proportion="2.965909" vertical-offset="0" max-vertical-offset="684">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
