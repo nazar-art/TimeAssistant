@@ -1,7 +1,6 @@
 package com.java.task11.controller.service;
 
 import com.java.task11.controller.dao.DaoFactory;
-import com.java.task11.controller.dao.EmployeeDao;
 import com.java.task11.model.Employee;
 
 import javax.servlet.http.HttpServlet;
@@ -12,31 +11,30 @@ import java.util.List;
  * @version 1.00 2014-03-05
  */
 public class EmployeeService implements IBaseService<Employee> {
-    private EmployeeDao employeeDao = DaoFactory.getInstance().getEmployeeDao();
 
     @Override
     public Employee getByID(Integer id) {
-        return employeeDao.getByID(id);
+        return DaoFactory.getInstance().getEmployeeDao().getByID(id);
     }
 
     @Override
     public void save(Employee element) {
-        employeeDao.save(element);
+        DaoFactory.getInstance().getEmployeeDao().save(element);
     }
 
     @Override
     public void update(Employee element) {
-        employeeDao.update(element);
+        DaoFactory.getInstance().getEmployeeDao().update(element);
     }
 
     @Override
     public void delete(Employee element) {
-        employeeDao.delete(element);
+        DaoFactory.getInstance().getEmployeeDao().delete(element);
     }
 
     @Override
     public List<Employee> getListOfObjects() {
-        return employeeDao.getListOfObjects();
+        return DaoFactory.getInstance().getEmployeeDao().getListOfObjects();
     }
 
     public Employee getByEmail(String email) {

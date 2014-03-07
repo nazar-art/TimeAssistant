@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="lib">
+    <archive path="/home/nazar/IdeaProjects/TimeAssistant/lib/antlr-2.7.7.jar" />
+    <archive path="/home/nazar/IdeaProjects/TimeAssistant/lib/dom4j-1.6.1.jar" />
+    <archive path="/home/nazar/IdeaProjects/TimeAssistant/lib/servlet-api.jar" />
+    <archive path="/home/nazar/IdeaProjects/TimeAssistant/lib/log4j-1.2.17.jar" />
+    <archive path="/home/nazar/IdeaProjects/TimeAssistant/lib/commons-io-2.4.jar" />
+    <archive path="/home/nazar/IdeaProjects/TimeAssistant/lib/standard-1.1.2.jar" />
+    <archive path="/home/nazar/IdeaProjects/TimeAssistant/lib/commons-codec-1.9.jar" />
+    <archive path="/home/nazar/IdeaProjects/TimeAssistant/lib/javassist-3.18.1-GA.jar" />
+    <archive path="/home/nazar/IdeaProjects/TimeAssistant/lib/jboss-logging-3.1.0.GA.jar" />
+    <archive path="/home/nazar/IdeaProjects/TimeAssistant/lib/commons-fileupload-1.3.1.jar" />
+    <archive path="/home/nazar/IdeaProjects/TimeAssistant/lib/hibernate-core-4.2.8.Final.jar" />
+    <archive path="/home/nazar/IdeaProjects/TimeAssistant/lib/mysql-connector-java-5.1.27-bin.jar" />
+    <archive path="/home/nazar/IdeaProjects/TimeAssistant/lib/javax.servlet.jsp.jstl-api-1.2.1.jar" />
+    <archive path="/home/nazar/IdeaProjects/TimeAssistant/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar" />
+    <archive path="/home/nazar/IdeaProjects/TimeAssistant/lib/hibernate-commons-annotations-4.0.2.Final.jar" />
+    <archive path="/home/nazar/IdeaProjects/TimeAssistant/lib/jboss-transaction-api_1.1_spec-1.0.1.Final.jar" />
+  </library>
+  <library name="jquery-1.9.1">
+    <archive path="/home/nazar/.IntelliJIdea13/system/extLibs/__code.jquery.com_jquery-1.9.1.js" />
+  </library>
+  <library name="jquery-ui">
+    <archive path="/home/nazar/.IntelliJIdea13/system/extLibs/__code.jquery.com_ui_1.10.4_jquery-ui.js" />
+  </library>
+</eclipse-userlibraries>
+

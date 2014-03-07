@@ -1,7 +1,6 @@
 package com.java.task11.controller.service;
 
 import com.java.task11.controller.dao.DaoFactory;
-import com.java.task11.controller.dao.SubtaskDao;
 import com.java.task11.model.Subtask;
 
 import java.util.List;
@@ -11,30 +10,29 @@ import java.util.List;
  * @version 1.00 2014-03-05
  */
 public class SubtaskService implements IBaseService<Subtask> {
-    private SubtaskDao subtaskDao = DaoFactory.getInstance().getSubtaskDao();
 
     @Override
     public Subtask getByID(Integer id) {
-        return subtaskDao.getByID(id);
+        return DaoFactory.getInstance().getSubtaskDao().getByID(id);
     }
 
     @Override
     public void save(Subtask element) {
-        subtaskDao.save(element);
+        DaoFactory.getInstance().getSubtaskDao().save(element);
     }
 
     @Override
     public void update(Subtask element) {
-        subtaskDao.update(element);
+        DaoFactory.getInstance().getSubtaskDao().update(element);
     }
 
     @Override
     public void delete(Subtask element) {
-        subtaskDao.delete(element);
+        DaoFactory.getInstance().getSubtaskDao().delete(element);
     }
 
     @Override
     public List<Subtask> getListOfObjects() {
-        return subtaskDao.getListOfObjects();
+        return DaoFactory.getInstance().getSubtaskDao().getListOfObjects();
     }
 }

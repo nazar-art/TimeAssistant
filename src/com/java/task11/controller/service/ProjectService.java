@@ -1,7 +1,6 @@
 package com.java.task11.controller.service;
 
 import com.java.task11.controller.dao.DaoFactory;
-import com.java.task11.controller.dao.ProjectDao;
 import com.java.task11.model.Project;
 
 import java.util.List;
@@ -11,30 +10,29 @@ import java.util.List;
  * @version 1.00 2014-03-05
  */
 public class ProjectService implements IBaseService<Project> {
-    private ProjectDao projectDao = DaoFactory.getInstance().getProjectDao();
 
     @Override
     public Project getByID(Integer id) {
-        return projectDao.getByID(id);
+        return DaoFactory.getInstance().getProjectDao().getByID(id);
     }
 
     @Override
     public void save(Project element) {
-        projectDao.save(element);
+        DaoFactory.getInstance().getProjectDao().save(element);
     }
 
     @Override
     public void update(Project element) {
-        projectDao.update(element);
+        DaoFactory.getInstance().getProjectDao().update(element);
     }
 
     @Override
     public void delete(Project element) {
-        projectDao.delete(element);
+        DaoFactory.getInstance().getProjectDao().delete(element);
     }
 
     @Override
     public List<Project> getListOfObjects() {
-        return projectDao.getListOfObjects();
+        return DaoFactory.getInstance().getProjectDao().getListOfObjects();
     }
 }
