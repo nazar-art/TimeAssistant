@@ -29,13 +29,13 @@ public class RegistrationServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/pages/registration.jsp").forward(request, response);
+            request.getRequestDispatcher("/pages/registration.jsp").forward(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        processRegistration(request, response);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+            request.setCharacterEncoding("UTF-8");
+            processRegistration(request, response);
     }
 
     private void processRegistration(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -46,11 +46,13 @@ public class RegistrationServlet extends HttpServlet {
         String imageName = "default.png";
         String position = request.getParameter("position");
 
+        System.out.printf("Request fields: %s %s %s %s %s%n", firstName, lastName, email, password, position);
+
         Part filePart = request.getPart("userImage");
         try {
             String contentType = filePart.getContentType();
             if (contentType.startsWith("image")) {
-                File image = FileUploadUtils.uploadFile(this, "img\\users", filePart);
+                File image = FileUploadUtils.uploadFile(this, "img\\employees", filePart);
                 imageName = FileUploadUtils.getFilename(image);
             }
         } catch (Exception e) {
@@ -86,14 +88,18 @@ public class RegistrationServlet extends HttpServlet {
         if (ValidationUtils.isNullOrEmpty(lastName)) {
             registrationErrors.add(ValidationErrors.LAST_NAME);
         }
-        if (!ValidationUtils.validEmail(email)) {
+        if (!ValidationUtils.isEmailValid(email)) {
             registrationErrors.add(ValidationErrors.EMAIL);
         }
-        if (employeeService.getByEmail(email).getId() != 0) {
+        if (employeeService.getByEmail(email).getId() != null) {
             registrationErrors.add(ValidationErrors.EMAIL_ALREADY_PRESENT);
         }
         if (ValidationUtils.isNullOrEmpty(password)) {
             registrationErrors.add(ValidationErrors.PASSWORD);
         }
-        return registrationErrors;    }
+/*        if (!ValidationUtils.isNullOrEmpty(position)) {
+            registrationErrors.add(ValidationErrors.POSITION_EMPTY);
+        }*/
+        return registrationErrors;
+    }
 }

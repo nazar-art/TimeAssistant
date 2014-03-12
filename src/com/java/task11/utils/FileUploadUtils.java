@@ -14,10 +14,8 @@ public class FileUploadUtils {
     private static Logger log = Logger.getLogger(FileUploadUtils.class);
     private static final int DEFAULT_BUFFER_SIZE = 10240;
 
-    public static File uploadFile(HttpServlet servlet, String directory, FileItem item)
-            throws Exception {
-        String path = servlet.getServletContext().getRealPath("")
-                + File.separator + directory;
+    public static File uploadFile(HttpServlet servlet, String directory, FileItem item) throws Exception {
+        String path = servlet.getServletContext().getRealPath("") + File.separator + directory;
         File uploadFolder = new File(path);
         String filename = FilenameUtils.getName(item.getName()).replaceAll("\\s", "_");
         String fileNamePrefix = FilenameUtils.getBaseName(filename) + "_";
@@ -27,8 +25,7 @@ public class FileUploadUtils {
         return file;
     }
 
-    public static File uploadFile(HttpServlet servlet, String directory, Part filePart)
-            throws Exception {
+    public static File uploadFile(HttpServlet servlet, String directory, Part filePart) throws Exception {
         String path = servlet.getServletContext().getRealPath("")
                 + File.separator + directory;
         String filename = getFilename(filePart)

@@ -14,7 +14,7 @@ public class HibernateUtil {
     private static Logger log = Logger.getLogger(HibernateUtil.class);
 
     static {
-        PropertyConfigurator.configure("src/log4j.properties");
+        PropertyConfigurator.configure("src/resources/log4j.properties");
     }
 
     private static SessionFactory sessionFactory = null;
@@ -24,7 +24,7 @@ public class HibernateUtil {
     static {
         try {
             // Creates the session factory from hibernate.cfg.xml
-            configuration.configure();
+            configuration.configure("/resources/hibernate.cfg.xml");
             sessionFactory = configuration
                     .buildSessionFactory(new ServiceRegistryBuilder()
                             .applySettings(configuration.getProperties())

@@ -11,7 +11,7 @@ import org.apache.log4j.PropertyConfigurator;
 public class Application {
 
     static {
-        PropertyConfigurator.configure("src/log4j.properties");
+        PropertyConfigurator.configure("src/resources/log4j.properties");
     }
 
     public static void main(String[] args) {

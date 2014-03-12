@@ -18,8 +18,8 @@ public class ValidationUtils {
         return str.length() == pos.getIndex();
     }
 
-    public static boolean validEmail(String email) {
-        return email.matches("[^ @]*@[^ @]*\\.[^ @]{2,}");
+    public static boolean isEmailValid(String email) {
+        return !email.isEmpty() && email.matches("[^ @]*@[^ @]*\\.[^ @]{2,}");
     }
 
     public static boolean isThisDateValid(String dateToValidate, String dateFormat) {
@@ -33,7 +33,6 @@ public class ValidationUtils {
 
         try {
             Date date = sdf.parse(dateToValidate);
-
         } catch (ParseException e) {
             log.error(e);
             result = false;

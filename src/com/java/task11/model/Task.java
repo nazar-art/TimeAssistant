@@ -1,8 +1,8 @@
 package com.java.task11.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author nlelyak
@@ -37,9 +37,9 @@ public class Task {
     @Column(name = "real_time")
     private Date realTime;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "subtask")
-    private Subtask subtask;
+    @OneToMany(fetch=FetchType.LAZY, targetEntity=Subtask.class, cascade=CascadeType.ALL)
+    @JoinColumn(name = "main_task_id", referencedColumnName="task_id")
+    private List<Subtask> subtask;
 
     @Column(name = "state")
     @Enumerated(EnumType.STRING)
@@ -105,19 +105,19 @@ public class Task {
         this.realTime = realTime;
     }
 
-    public Subtask getSubtasks() {
-        return subtask;
-    }
-
-    public void setSubtasks(Subtask subtask) {
-        this.subtask = subtask;
-    }
-
     public TaskState getState() {
         return state;
     }
 
     public void setState(TaskState state) {
         this.state = state;
+    }
+
+    public List<Subtask> getSubtask() {
+        return subtask;
+    }
+
+    public void setSubtask(List<Subtask> subtask) {
+        this.subtask = subtask;
     }
 }

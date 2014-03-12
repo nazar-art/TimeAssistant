@@ -7,6 +7,6 @@ public class ValidationErrors {
     public static final String EMAIL_ALREADY_PRESENT = "This email already registered.";
     public static final String PASSWORD = "Password can't be empty.";
     public static final String DATE_FORMAT = "Wrong date format.";
-    public static final String DATE_SEQUENCE = "Arrival date should go after depart date.";
-    public static final String PRICE = "Price must be an number.";
+    public static final String DATE_SEQUENCE = "End date should go after start date.";
+    public static final String POSITION_EMPTY = "Please enter position.";
 }

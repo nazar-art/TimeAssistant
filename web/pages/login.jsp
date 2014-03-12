@@ -23,9 +23,11 @@
                 </div>
                 <div class="login-form col-md-4 col-sm-8 col-xs-12 col-md-offset-1 col-sm-offset-1">
                     <form action="login" method="post">
+                        <%--errors--%>
                         <div class="form-group">
                             <p class="error">${loginErrors}</p>
                         </div>
+                        <%--Input fields--%>
                         <div class="form-group">
                             <input class="form-control" type="email" placeholder="<fmt:message key="login.email"/>" name="email"
                                    pattern="[^ @]*@[^ @]*\.[^ @]{2,}" required id="email"/>

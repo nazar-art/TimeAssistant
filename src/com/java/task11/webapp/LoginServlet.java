@@ -26,11 +26,11 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getParameter("logout") != null) {
             HttpSession session = request.getSession();
-            Employee employee = (Employee) session.getAttribute("user");
+            Employee employee = (Employee) session.getAttribute("employee");
             log.info("Logged out: " + employee.getFirstName() + " " + employee.getLastName());
-            session.removeAttribute("user");
+            session.removeAttribute("employee");
             // todo send redirect to next step
-//            response.sendRedirect("");
+            response.sendRedirect("/registration");
         } else {
             request.getRequestDispatcher("/pages/login.jsp").forward(request, response);
         }
@@ -46,14 +46,14 @@ public class LoginServlet extends HttpServlet {
         Employee user = new EmployeeService().getByEmail(email);
 
         if (!ValidationUtils.isNullOrEmpty(user.getEmail()) && user.getPassword().equals(password)) {
-            session.setAttribute("user", user);
+            session.setAttribute("employee", user);
             log.info("Logged in: " + user.getFirstName() + " " + user.getLastName());
             if (session.getAttribute("waitUrl") != null) {
                 String url = session.getAttribute("waitUrl").toString();
                 response.sendRedirect(url);
             } else {
                 // todo send redirect to next step
-//                response.sendRedirect("/");
+                response.sendRedirect("/projects");
             }
         } else {
             request.setAttribute("loginErrors", "Wrong email or password");
